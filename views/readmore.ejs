@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+
+   <style>
+        .readmore{
+    margin-left: 4rem;
+    margin-top: 4rem;
+    }
+    </style>
+<div class="readmore">
+        <h1><%= Values %></h1>
+        <% var index = Array.lastIndexOf(Values); %>
+        <p><%= Array[index+1]; %></p>
+</div>
+
+
+<%- include("partials/footer.ejs") %>

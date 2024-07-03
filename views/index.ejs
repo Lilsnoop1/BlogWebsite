@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+<main>
+    <div class="holder">
+            <% for(let x = 0;x<Array.length;x++){%>
+                <div>
+                    <% if(x%2==0){%>
+                        <h1><%= Array[x] %></h1> 
+                        <% var hrefOne = "readmore.ejs/" + Array[x]; %>
+                    <%}else{%>
+                        <% if(Array[x].length>30){%>
+                            <%var result = Array[x].substring(0,100) + "..." ;%>
+                            <% if(locals.Value){%>
+                                <p><%= result %> <a href=<%= hrefOne %>>Read More</a></p> 
+                            <%}else{%>
+                                <p><%= result %></p> 
+                            <%} %>
+                            
+                        <%}else{%>
+                            <p><%=Array[x]%></p> 
+                        <%} %>
+                    <%} %>       
+                </div>
+            <%} %>
+    
+        </div>
+    </div>
+</main>
+
+<%- include("partials/footer.ejs") %>
